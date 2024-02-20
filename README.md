@@ -22,7 +22,7 @@ pod 'XKFoldTextView'
 
 ## Author
 
-xk, weikun.xie@get88.cn
+kenneth, kunhum@163.com
 
 ## License
 
