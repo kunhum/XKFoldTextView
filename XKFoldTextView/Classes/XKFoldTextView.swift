@@ -96,13 +96,12 @@ open class XKFoldTextView: UIView {
         super.layoutSubviews()
         
         textView.frame = bounds
-        
-        let buttonTitle = (moreButton.title(for: isFolded ? .selected : .normal)) ?? ""
-        let buttonSize = (buttonTitle as NSString).size()
+        let buttonTitle = moreButton.currentTitle ?? ""
+        let buttonSize = (buttonTitle as NSString).size(withAttributes: [.font: moreButton.titleLabel?.font ?? .systemFont(ofSize: 13)])
         let buttonHeight = buttonSize.height
-        let buttonWidth = buttonSize.width + 3
+        let buttonWidth = buttonSize.width
         moreButton.frame = CGRect(x: bounds.width-buttonWidth,
-                                  y: bounds.height-buttonHeight-1,
+                                  y: bounds.height-buttonHeight,
                                   width: buttonWidth,
                                   height: buttonHeight)
     }
